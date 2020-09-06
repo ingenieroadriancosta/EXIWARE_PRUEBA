@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EXIWARE", "EXIWARE.csproj", "{AD23B28A-6A89-4B5E-A8E1-690A21BDE1CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD23B28A-6A89-4B5E-A8E1-690A21BDE1CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD23B28A-6A89-4B5E-A8E1-690A21BDE1CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD23B28A-6A89-4B5E-A8E1-690A21BDE1CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD23B28A-6A89-4B5E-A8E1-690A21BDE1CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {510762B0-36C1-41B2-81CC-196E7504B4BB}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,51 @@
+<div class="border border-primary" id="AllAdminsTable">
+<h4>Administradores</h4>
+
+<form class="form-inline ml-auto">
+  <div class="md-form my-0">
+    <input class="form-control" type="text" placeholder="Buscar administrador" aria-label="Search"
+          onkeyup="searchadmin()" id="AllAdminsInput">
+  </div>
+</form>
+<br>
+
+
+
+<table id="AllAdminsTable" class="table table-sm">
+  <tr class="header">
+    <th cope="col">Nombre</th>
+    <th cope="col">Apellido</th>
+    <th cope="col">Teléfono</th>
+    <th cope="col">SuperAdmin</th>
+  </tr>
+  @foreach (var adpA in Model.AdparAll ){
+    <tr>
+      <td>@adpA.Name</td>
+      <td>@adpA.LastName</td>
+      <td>@adpA.Phone</td>
+      <td>@adpA.SuperAdmin</td>
+    </tr>
+  }
+</table>
+</div>
+<br>
+<script>
+    function searchadmin() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("AllAdminsInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("AllAdminsTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>

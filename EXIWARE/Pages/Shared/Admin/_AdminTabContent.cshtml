@@ -1,0 +1,41 @@
+<div class="tab-content" id="pills-tabContent">
+
+    <div class="tab-pane fade show active" id="addadm" role="tabpanel" aria-labelledby="addadm-tab">
+        @if( Model.Adpar.SuperAdmin ){
+            //<p style="color:green">Le está permitido agregar administradores.</p>
+            //@Html.Partial("Admin/_AdminModAny")
+            <div class="form-group  w-25 ">
+                <label for="sel1">Opciones:</label>
+                <select class="form-control form-control-sm" id="ProcsSelect" onchange = "SHDivAdmin(this)">
+                <option>Buscar</option>
+                <option>Agregar</option>
+                <option>Modificar</option>
+                </select>
+            </div>
+        }else{
+            <p style="color:red">No le está permitido agregar administradores.</p>
+            @Html.Partial("Admin/_AdminTableAll")
+        }
+    </div>
+
+    <div class="tab-pane fade" id="addsucu" role="tabpanel" aria-labelledby="addsucu-tab">
+        2
+    </div>
+
+    <div class="tab-pane fade" id="addempl" role="tabpanel" aria-labelledby="addempl-tab">
+        3
+    </div>
+
+    <div class="tab-pane fade" id="addcli" role="tabpanel" aria-labelledby="addcli-tab">
+        4
+    </div>
+
+    <div class="tab-pane fade" id="addped" role="tabpanel" aria-labelledby="addped-tab">
+        5
+    </div>
+ 
+</div>
+
+
+
+
