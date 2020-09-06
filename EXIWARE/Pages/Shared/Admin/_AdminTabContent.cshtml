@@ -3,6 +3,7 @@
         @if( Model.Adpar.SuperAdmin ){
             //<p style="color:green">Le está permitido agregar administradores.</p>
             //@Html.Partial("Admin/_AdminModAny")
+            @Html.Partial("Admin/_AdminAll/_AdminInsert")
             @Html.Partial("Admin/_AdminAll/_AdminModify")
             @Html.Partial("Admin/_AdminAll/_AdminTableAll")
         }else{

@@ -1,3 +1,7 @@
+CALL git add .
+CALL git commit -m "1.0"
+CALL git branch -M master
+CALL git push -u origin master
 CALL git push -u origin master
 pause
 
