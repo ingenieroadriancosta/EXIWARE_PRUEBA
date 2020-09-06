@@ -103,6 +103,6 @@ E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netc
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Admin\_AdminLogOut.cshtml.g.cs
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Admin\_AdminLogOutNavHead.cshtml.g.cs
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Admin\_AdminTabContent.cshtml.g.cs
-E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Admin\_AdminTableAll.cshtml.g.cs
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Views\Home\Many.cshtml.g.cs
-E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Admin\_AdminModAny.cshtml.g.cs
+E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Admin\_AdminAll\_AdminTableAll.cshtml.g.cs
+E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Admin\_AdminAll\_AdminModify.cshtml.g.cs

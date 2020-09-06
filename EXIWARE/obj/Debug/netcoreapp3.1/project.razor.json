@@ -14397,13 +14397,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\EXIWARE\\EXIWARE\\Pages\\Shared\\Admin\\_AdminModAny.cshtml",
-      "TargetPath": "Pages\\Shared\\Admin\\_AdminModAny.cshtml",
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\EXIWARE\\EXIWARE\\Pages\\Shared\\Admin\\_AdminTabContent.cshtml",
+      "TargetPath": "Pages\\Shared\\Admin\\_AdminTabContent.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\EXIWARE\\EXIWARE\\Pages\\Shared\\Admin\\_AdminTabContent.cshtml",
-      "TargetPath": "Pages\\Shared\\Admin\\_AdminTabContent.cshtml",
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\EXIWARE\\EXIWARE\\Pages\\Shared\\Admin\\_AdminAll\\_AdminTableAll.cshtml",
+      "TargetPath": "Pages\\Shared\\Admin\\_AdminAll\\_AdminTableAll.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14457,13 +14457,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\EXIWARE\\EXIWARE\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\EXIWARE\\EXIWARE\\Pages\\Shared\\Admin\\_AdminAll\\_AdminModify.cshtml",
+      "TargetPath": "Pages\\Shared\\Admin\\_AdminAll\\_AdminModify.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\EXIWARE\\EXIWARE\\Pages\\Shared\\Admin\\_AdminTableAll.cshtml",
-      "TargetPath": "Pages\\Shared\\Admin\\_AdminTableAll.cshtml",
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\EXIWARE\\EXIWARE\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
