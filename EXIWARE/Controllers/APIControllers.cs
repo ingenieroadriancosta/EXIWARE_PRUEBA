@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using EXIWARE.Params;
-// using Params;
 using Microsoft.AspNetCore.Http;
+using System;
+
 namespace EXIWARE.Controllers
 {
     [Microsoft.AspNetCore.Mvc.Route("/api")]
@@ -29,19 +30,6 @@ namespace EXIWARE.Controllers
                 adp.State = true;
                 adp.SuperAdmin = true;
                 db.ADMINISTRADORES.Add(adp);
-                
-
-
-                AdministradoresParams adp2 = new AdministradoresParams();
-                adp2.Id_card = 1234;
-                adp2.Name = "EXIWARE";
-                adp2.LastName = "CO";
-                adp2.Phone = 5717044177;
-                adp2.Password = "exiadmin";
-                adp2.SesionValue = "123";
-                adp2.State = true;
-                adp2.SuperAdmin = true;
-                db.ADMINISTRADORES.Add(adp2);
                 db.SaveChanges();
             }
             if( Vlogin.Id==null || Vlogin.Pss==null ){
@@ -60,6 +48,73 @@ namespace EXIWARE.Controllers
         //
         //
         /*
+            INgresar nuevo administrador.
+        */
+        [HttpGet("[action]"), FormatFilter]
+        public IActionResult  GetAdmin()
+        {
+            if( FAd.GetSesInfo( HttpContext )==null ){
+                return Json( "Fail: SESION FINALIZADA" );
+            }
+            long id_c = ManyFuncs.str2long( Request.Query["id"] );
+            if( id_c<0 ){
+                return Json( "Fail: if id_c 0 " + Request.Query["id"] );
+            }
+            if( !FAd.IsAdmin( id_c ) ){
+                return Json( "Fail: Administrador no encontrado." );
+            }
+            return Json( FAd.GetAdmin(id_c) );
+        }
+        //
+        //
+        //
+        /*
+            INgresar nuevo administrador.
+        */
+        [HttpPut("[action]"), FormatFilter]
+        public IActionResult ActualizarAdmin( [FromBody]AdminModify VModify )
+        {
+            return Json( "Fail in" );
+        }
+        //
+        //
+        //
+        /*
+            INgresar nuevo administrador.
+        */
+        [HttpPost("[action]"), FormatFilter]
+        public IActionResult InsertAdmin( [FromBody]AdminInsertNew Vinsert )
+        {
+            AdministradoresParams adp = new AdministradoresParams();
+            if( Vinsert==null ){
+                return Json( "Fail" );
+            }
+            adp.Id_card = ManyFuncs.str2long(Vinsert.Id_Card);
+            if( adp.Id_card<0 ){
+                return Json( "Fail  IDCARD not found" );
+            }
+            if( FAd.IsAdmin(adp.Id_card) ){
+                return Json( "Fail: ADMINISTRADOR EXISTENTE" );
+            }
+            if( FAd.GetSesInfo( HttpContext )==null ){
+                return Json( "Fail: SESION FINALIZADA" );
+            }
+            adp.Name = Vinsert.Name;
+            adp.LastName = Vinsert.LastName;
+            adp.Phone = ManyFuncs.str2long(Vinsert.Phone);
+            adp.Password = Vinsert.Password;
+            adp.SesionValue = HttpContext.Session.GetString( AdminViews.sname );
+            adp.State = true;
+            adp.SuperAdmin = bool.Parse( Vinsert.IsSuperAdmin+"" ) ||
+                                Vinsert.IsSuperAdmin.Equals("true");
+            db.ADMINISTRADORES.Add(adp);
+            db.SaveChanges();
+            return Json( "Ok" );
+        }
+        //
+        //
+        //
+        /*
             Finalizar sesion.
         */
         [HttpGet("[action]")]
@@ -72,7 +127,7 @@ namespace EXIWARE.Controllers
         //
         //
         /*
-            Finalizar sesion.
+            Obtener datos de la sesion.
         */
         [HttpGet("[action]")]
         public IActionResult GetSesion()
@@ -83,7 +138,6 @@ namespace EXIWARE.Controllers
         //
         //
         /*
-            Finalizar sesion.
         */
         [HttpGet("[action]")]
         public IActionResult Index()

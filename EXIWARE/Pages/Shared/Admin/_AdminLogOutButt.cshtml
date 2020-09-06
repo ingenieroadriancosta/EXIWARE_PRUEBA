@@ -1,6 +1,8 @@
 <div id="adminlogout" >
     <button type="submit" class="btn btn-primary" onclick="logoutf()">LogOut</button>
-    <label id>Sesión iniciada por el administrador: @Model.Adpar.Name @Model.Adpar.LastName</label>
+    <label id>Sesión iniciada por: 
+        <b style="color: green;">@Model.Adpar.Name @Model.Adpar.LastName</b>
+    </label>
 </div>
 <br>
 <script>

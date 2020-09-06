@@ -107,3 +107,4 @@ E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netc
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Admin\_AdminAll\_AdminTableAll.cshtml.g.cs
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Admin\_AdminAll\_AdminModify.cshtml.g.cs
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Admin\_AdminAll\_AdminInsert.cshtml.g.cs
+E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\EXIWARE\EXIWARE\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\Admin\_AdminAll\_AdminAdminOpts.cshtml.g.cs

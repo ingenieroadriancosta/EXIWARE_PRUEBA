@@ -1,4 +1,108 @@
 <div class="border border-warning">
-<h4>Ingresar</h4>
+<br>
+<h4>Ingreso de nuevo administrador</h4>
+<br>
+    <table class="table table-sm table-responsive-sm w-auto">
+        <tr class="header">
+            <th cope="col">Cédula</th>
+            <th cope="col">Nombre</th>
+            <th cope="col">Apellido</th>
+            <th cope="col">Teléfono</th>
+            <th cope="col">Contraseña</th>
+            <th cope="col">SuperAdmin</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="text" placeholder="Cédula"
+                    maxlength="12"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                        id="ID_Add_Admin_0">
+                </div>
+            </td>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="text" placeholder="Nombre"
+                    onkeydown="return /[a-z]/i.test(event.key)"
+                        id="ID_Add_Admin_1">
+                </div>
+            </td>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="text" placeholder="Apellido"
+                        onkeydown="return /[a-z]/i.test(event.key)"
+                        id="ID_Add_Admin_2">
+                </div>
+            </td>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="text" placeholder="Teléfono"
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                    maxlength="15"
+                        id="ID_Add_Admin_3">
+                </div>
+            </td>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="password" placeholder="Contraseña"
+                    maxlength="20"
+                        id="ID_Add_Admin_4">
+                </div>
+            </td>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="checkbox" placeholder="Contraseña"
+                        id="ID_Add_Admin_5">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+        <button id="ID_INS_ADM" type="button" class="btn btn-primary pull-right"
+                onclick="AddAdmin()" >
+            INGRESAR
+        </button>
+    <br>
+    <br>
+
 </div>
 <br>
+<script>
+    function AddAdmin(){
+        for( cnt=0; cnt<5; cnt++ ){
+            if( document.getElementById( "ID_Add_Admin_" + cnt ).value==null ||
+                document.getElementById( "ID_Add_Admin_" + cnt ).value=="" ){
+                ModalInfoShow( "Error", "Hay campos vacios." );
+                return;
+            }
+        }
+        datas = JSON.stringify({
+                    Id_Card:document.getElementById( "ID_Add_Admin_0" ).value+"",
+                    Name:document.getElementById( "ID_Add_Admin_1" ).value+"",
+                    LastName:document.getElementById( "ID_Add_Admin_2" ).value+"",
+                    Phone:document.getElementById( "ID_Add_Admin_3" ).value+"",
+                    Password:document.getElementById( "ID_Add_Admin_4" ).value+"",
+                    IsSuperAdmin:document.getElementById( "ID_Add_Admin_5" ).checked+""
+                });
+        http = senddatas( "api/InsertAdmin", "POST", true, datas );
+        http.onreadystatechange = function() {
+            if( http.readyState!=4 ){
+                return;
+            }
+            if(http.status == 200) {
+                if( http.responseText.indexOf("Fail")<0 ){
+                    ModalInfoShow( "Status", "Administrador agregado correctamente." ).onclick = function(){location.reload();};
+                }else{
+                    ModalInfoShow( "Error!!!", http.responseText+"" ).onclick = function(){
+                            location.reload();
+                    };
+                }
+            }else{
+                ModalInfoShow( "Error!!!", http.responseText+"" ).onclick = function(){
+                        location.reload();
+                };
+            }
+        }
+    }
+</script>

@@ -27,6 +27,31 @@ namespace EXIWARE.Params{
     {
         public string Id { get; set; }
         public string Pss { get; set; }
+    }  
+    //
+    //
+    //
+    public class AdminInsertNew
+    {
+        public string Id_Card { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string Phone { get; set; }
+        public string Password { get; set; }
+        public string IsSuperAdmin { get; set; }
+    }  
+    //
+    //
+    //
+    public class AdminModify
+    {
+        public string Id_Card { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string Phone { get; set; }
+        public string Password { get; set; }
+        public string State { get; set; }
+        public string IsSuperAdmin { get; set; }
     }
     //
     //

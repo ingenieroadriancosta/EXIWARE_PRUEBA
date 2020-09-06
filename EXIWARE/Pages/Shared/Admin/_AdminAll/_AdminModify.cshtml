@@ -1,4 +1,170 @@
-<div class="border border-danger">
-<h4>Modificar</h4>
+<div class="border border-warning">
+<br>
+<h4>Modificar administrador</h4>
+<br>
+<div class="form-inline">
+    <div class="form-group mx-sm-3 mb-2">
+        <label for="inpt2" class="sr-only">ID</label>
+        <input type="text" class="form-control" id="id" placeholder="Ingresar ID"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                value="123456789"
+            >
+    </div>
+    <button class="btn btn-primary mb-2" onclick="GetAdmin()">BUSCAR</button>
 </div>
 <br>
+<br>
+    <table class="table table-sm table-responsive-sm w-auto">
+        <tr class="header">
+            <th cope="col">Cédula</th>
+            <th cope="col">Nombre</th>
+            <th cope="col">Apellido</th>
+            <th cope="col">Teléfono</th>
+            <th cope="col">Contraseña</th>
+            <th cope="col">Estado</th>
+            <th cope="col">SuperAdmin</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="text" placeholder="Cédula"
+                    maxlength="20"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                        id="ID_Mod_Admin_0">
+                </div>
+            </td>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="text" placeholder="Nombre"
+                    onkeydown="return /[a-z]/i.test(event.key)"
+                        id="ID_Mod_Admin_1">
+                </div>
+            </td>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="text" placeholder="Apellido"
+                        onkeydown="return /[a-z]/i.test(event.key)"
+                        id="ID_Mod_Admin_2">
+                </div>
+            </td>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="text" placeholder="Teléfono"
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                    maxlength="15"
+                        id="ID_Mod_Admin_3">
+                </div>
+            </td>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="password" placeholder="Contraseña"
+                    maxlength="20"
+                        id="ID_Mod_Admin_4">
+                </div>
+            </td>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="checkbox" 
+                        id="ID_Mod_Admin_5">
+                </div>
+            </td>
+            <td>
+                <div class="md-form my-0">
+                    <input class="form-control form-control-sm" type="checkbox" 
+                        id="ID_Mod_Admin_6">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+        <button type="button" class="btn btn-primary pull-right"
+                onclick="ModifyAdmin()" >
+            MODIFICAR
+        </button>
+    <br>
+    <br>
+
+</div>
+<br>
+<script>
+    var valuesfromuser;
+    function GetAdmin(){
+        if( document.getElementById( "id" ).value==null ||
+            document.getElementById( "id" ).value=="" ){
+            ModalInfoShow( "Error", "El campo está vacio." );
+            return;
+        }
+        http = senddatas( "api/GetAdmin?id=" + document.getElementById( "id" ).value, 
+        "GET", true, null );
+        http.onreadystatechange = function(){
+            if( http.readyState!=4 ){
+                return;
+            }
+            if(http.status == 200) {
+                if( http.responseText.indexOf("Fail")<0 ){
+                    valuesfromuser = JSON.parse( http.responseText );
+                    document.getElementById( "ID_Mod_Admin_0" ).value = valuesfromuser['id_card'];
+                    document.getElementById( "ID_Mod_Admin_1" ).value = valuesfromuser['name'];
+                    document.getElementById( "ID_Mod_Admin_2" ).value = valuesfromuser['lastName'];
+                    document.getElementById( "ID_Mod_Admin_3" ).value = valuesfromuser['phone'];
+                    document.getElementById( "ID_Mod_Admin_4" ).value = valuesfromuser['password'];
+                    document.getElementById( "ID_Mod_Admin_5" ).checked = valuesfromuser['state'];
+                    document.getElementById( "ID_Mod_Admin_6" ).checked = valuesfromuser['superAdmin'];
+                    // ModalInfoShow( "Error!!!", JSON.stringify( http.responseText ) )
+                }else{
+                    ModalInfoShow( "Error!!!", http.responseText+"" ).onclick = function(){
+                            location.reload();
+                    };
+                }
+            }else{
+                ModalInfoShow( "Error!!!", http.responseText+"" ).onclick = function(){
+                        location.reload();
+                };
+            }
+        }
+    }
+    //
+    //
+    //
+    //
+    function ModifyAdmin(){
+        for( cnt=0; cnt<5; cnt++ ){
+            if( document.getElementById( "ID_Mod_Admin_" + cnt ).value==null ||
+                document.getElementById( "ID_Mod_Admin_" + cnt ).value=="" ){
+                ModalInfoShow( "Error", "Hay campos vacios." );
+                return;
+            }
+        }
+        datas = JSON.stringify({
+                    Id_Card:document.getElementById( "ID_Mod_Admin_0" ).value+"",
+                    Name:document.getElementById( "ID_Mod_Admin_1" ).value+"",
+                    LastName:document.getElementById( "ID_Mod_Admin_2" ).value+"",
+                    Phone:document.getElementById( "ID_Mod_Admin_3" ).value+"",
+                    Password:document.getElementById( "ID_Mod_Admin_4" ).value+"",
+                    state:document.getElementById( "ID_Mod_Admin_5" ).value+"",
+                    IsSuperAdmin:document.getElementById( "ID_Mod_Admin_6" ).checked+""
+                });
+        http = senddatas( "api/ActualizarAdmin", "PUT", true, datas );
+        http.onreadystatechange = function() {
+            if( http.readyState!=4 ){
+                return;
+            }
+            if(http.status == 200) {
+                if( http.responseText.indexOf("Fail")<0 ){
+                    ModalInfoShow( "Status", "Administrador agregado correctamente." ).onclick = function(){
+                        //location.reload();
+                        };
+                }else{
+                    ModalInfoShow( "Error!!!", http.responseText+"" ).onclick = function(){
+                            //location.reload();
+                    };
+                }
+            }else{
+                ModalInfoShow( "Error!!!", http.responseText+"" ).onclick = function(){
+                        location.reload();
+                };
+            }
+        }
+    }
+</script>

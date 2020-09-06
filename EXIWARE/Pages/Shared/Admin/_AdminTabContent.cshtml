@@ -1,11 +1,7 @@
 <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="addadm" role="tabpanel" aria-labelledby="addadm-tab">
         @if( Model.Adpar.SuperAdmin ){
-            //<p style="color:green">Le está permitido agregar administradores.</p>
-            //@Html.Partial("Admin/_AdminModAny")
-            @Html.Partial("Admin/_AdminAll/_AdminInsert")
-            @Html.Partial("Admin/_AdminAll/_AdminModify")
-            @Html.Partial("Admin/_AdminAll/_AdminTableAll")
+            @Html.Partial("Admin/_AdminAll/_AdminAdminOpts")
         }else{
             <p style="color:red">No le está permitido agregar administradores.</p>
             @Html.Partial("Admin/_AdminAll/_AdminTableAll")

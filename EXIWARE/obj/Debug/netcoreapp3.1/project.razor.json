@@ -14432,6 +14432,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\EXIWARE\\EXIWARE\\Pages\\Shared\\Admin\\_AdminAll\\_AdminAdminOpts.cshtml",
+      "TargetPath": "Pages\\Shared\\Admin\\_AdminAll\\_AdminAdminOpts.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\EXIWARE\\EXIWARE\\Views\\Home\\Many.cshtml",
       "TargetPath": "Views\\Home\\Many.cshtml",
       "FileKind": "mvc"

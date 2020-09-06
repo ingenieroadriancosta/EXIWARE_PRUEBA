@@ -23,7 +23,11 @@
       <td>@adpA.Name</td>
       <td>@adpA.LastName</td>
       <td>@adpA.Phone</td>
-      <td>@adpA.SuperAdmin</td>
+      @if( @adpA.SuperAdmin ){
+        <td>SI</td>
+      }else{
+        <td>NO</td>
+      }
     </tr>
   }
 </table>
